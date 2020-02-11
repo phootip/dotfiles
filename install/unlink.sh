@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# DOTFILES=$HOME/.dotfiles
-DOTFILES=../.
+DOTFILES=$HOME/.dotfiles
 
 echo -e "\\nRemoving symlinks"
 echo "=============================="
@@ -9,7 +8,7 @@ linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 for file in $linkables ; do
   target="$HOME/.$( basename "$file" '.symlink' )"
   if [ -L "$target" ]; then
-    echo "~${target#$HOME} already exists... Skipping."
+    echo "~${target#$HOME} Unlinking..."
     unlink "$target"
   fi
 done

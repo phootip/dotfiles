@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# DOTFILES=$HOME/.dotfiles
-DOTFILES=../.
+DOTFILES=$HOME/.dotfiles
 
 echo -e "\\nCreating symlinks"
 echo "=============================="
@@ -15,3 +14,4 @@ for file in $linkables ; do
         ln -s "$file" "$target"
     fi
 done
+
