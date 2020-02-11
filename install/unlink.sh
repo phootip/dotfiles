@@ -12,5 +12,5 @@ for file in $linkables ; do
     unlink "$target"
   fi
 done
-
+unlink ~/.dotfiles
 #TODO: implement unlink
