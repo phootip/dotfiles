@@ -4,7 +4,12 @@ DOTFILES=$HOME/.dotfiles
 
 echo -e "\\nCreating symlinks"
 echo "=============================="
-ln -s `(pwd)` ~/.dotfiles
+
+if ! [[ -d $HOME/.dotfiles ]]; then
+    echo "Linking .dotfiles"
+    ln -s `(pwd)` ~/.dotfiles
+fi
+
 linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 for file in $linkables ; do
     target="$HOME/.$( basename "$file" '.symlink' )"

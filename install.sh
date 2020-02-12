@@ -21,8 +21,8 @@ fi
 echo -e "\\nGeneral Install"
 echo "=============================="
 
-echo "creating vim directories"
-mkdir -p ~/.vim-tmp
+# echo "creating vim directories"
+# mkdir -p ~/.vim-tmp
 
 if ! command_exists zsh; then
     echo "zsh not found. Please install and then re-run installation scripts"
@@ -45,8 +45,14 @@ if [[ "$SHELL" != "$zsh_path" ]]; then
 fi
 
 if ! [[ -d $HOME/.oh-my-zsh ]]; then
-    echo "no oh-my-zsh"
+    echo "No oh-my-zsh, installing..."
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+
+if ! [[ -d $HOME/.vim/bundle/Vundle.vim ]]; then
+    echo "No Vundle, installing..."
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
 
 echo "Done. Reload your terminal."
