@@ -11,7 +11,11 @@ source install/link.sh
 
 # only perform macOS-specific install
 if [ "$(uname)" == "Darwin" ]; then
-    source install/macos.sh
+    read -rn 1 -p "Setup brew and other mac configurations? [y/N] " ans
+    if [[ $ans =~ ^([Yy])$ ]]; then
+        source install/macos.sh
+    fi
+    # source install/macos.sh
 fi
 
 echo -e "\\nGeneral Install"
@@ -38,6 +42,11 @@ fi
 if [[ "$SHELL" != "$zsh_path" ]]; then
     chsh -s "$zsh_path"
     echo "default shell changed to $zsh_path"
+fi
+
+if ! [[ -d $HOME/.oh-my-zsh ]]; then
+    echo "no oh-my-zsh"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 echo "Done. Reload your terminal."
