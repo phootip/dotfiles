@@ -1,2 +1,2 @@
 Brewfile.lock.json
-vim/vim.symlink/Vundle.vim
+vim/vim.symlink/bundle/*
