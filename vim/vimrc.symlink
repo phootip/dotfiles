@@ -8,7 +8,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
-
+Plugin 'tpope/vim-surround'
 
 
 
@@ -21,6 +21,9 @@ set mouse=a   " Enable mouse
 set mousehide " Hide mouse when typing
 
 set number
+set clipboard=unnamed
+
+set termguicolors
 
 syntax on
 filetype plugin indent on

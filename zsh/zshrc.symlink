@@ -29,22 +29,8 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -52,7 +38,7 @@ ZSH_THEME="robbyrussell"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -67,7 +53,6 @@ plugins=(
 	zsh-autosuggestions
 	docker
 	zsh-syntax-highlighting
-	pm
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -101,13 +86,13 @@ bindkey '^[[3~' delete-char
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 
-# export PATH="/usr/local/opt/helm@2/bin:$PATH"
+export PATH="/usr/local/opt/helm@2/bin:$PATH"
 
 # PM (project manager) functions
-source $HOME/.pmzsh
+source $HOME/.dotfiles/pm/pmzsh.sh
 # K8S aliases
-source ~/.kubectl_aliases
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+source $HOME/.dotfiles/k8s/kubectl_aliases.sh
+source /usr/local/opt/kube-ps1/share/kube-ps1.sh
 
 alias watch='watch '
 PROMPT="%{$BG[016]%}$PROMPT"
