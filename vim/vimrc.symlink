@@ -9,8 +9,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-surround'
-
-
+Plugin 'scrooloose/syntastic'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 
@@ -22,8 +22,20 @@ set mousehide " Hide mouse when typing
 
 set number
 set clipboard=unnamed
+set showcmd
+let g:netrw_browse_split=4      " Open file in previous buffer
 
 set termguicolors
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 syntax on
 filetype plugin indent on
