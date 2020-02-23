@@ -14,7 +14,13 @@ Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 colorscheme gruvbox
-:set directory=$HOME/.vim/swaps
+
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+	set undodir=~/.vim/undo
+endif
 
 " Mouse
 set mouse=a   " Enable mouse

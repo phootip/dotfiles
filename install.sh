@@ -11,9 +11,18 @@ source install/link.sh
 
 # only perform macOS-specific install
 if [ "$(uname)" == "Darwin" ]; then
-    read -rn 1 -p "Setup brew and other mac configurations? [y/N] " ans
+    read -rn 1 -p "Setup brew and other Mac configurations? [y/N] " ans
     if [[ $ans =~ ^([Yy])$ ]]; then
         source install/macos.sh
+    fi
+    # source install/macos.sh
+fi
+
+# only perform Linux-specific install
+if [ "$(uname)" == "Linux" ]; then
+    read -rn 1 -p "Setup apt-get and other Linux configurations? [y/N] " ans
+    if [[ $ans =~ ^([Yy])$ ]]; then
+        source install/linux.sh
     fi
     # source install/macos.sh
 fi
@@ -47,6 +56,8 @@ fi
 if ! [[ -d $HOME/.oh-my-zsh ]]; then
     echo "No oh-my-zsh, installing..."
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    rm $HOME/.zshrc
+    mv $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
     git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
@@ -54,7 +65,9 @@ fi
 if ! [[ -d $HOME/.vim/bundle/Vundle.vim ]]; then
     echo "No Vundle, installing..."
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
 fi
 
-
+echo "Sadly you have to setup your termianl and fonts (for now)"
+echo "for Windows https://medium.com/@jrcharney/bash-on-ubuntu-on-windows-the-almost-complete-set-up-1dd3cb89b794"
 echo "Done. Reload your terminal."
