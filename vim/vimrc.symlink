@@ -3,7 +3,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
@@ -15,6 +14,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 colorscheme gruvbox
+:set directory=$HOME/.vim/swaps
 
 " Mouse
 set mouse=a   " Enable mouse

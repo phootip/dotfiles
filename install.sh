@@ -47,6 +47,8 @@ fi
 if ! [[ -d $HOME/.oh-my-zsh ]]; then
     echo "No oh-my-zsh, installing..."
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
 if ! [[ -d $HOME/.vim/bundle/Vundle.vim ]]; then
