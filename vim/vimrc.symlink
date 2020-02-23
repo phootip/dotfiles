@@ -3,7 +3,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
@@ -15,6 +14,13 @@ Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 colorscheme gruvbox
+
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+	set undodir=~/.vim/undo
+endif
 
 " Mouse
 set mouse=a   " Enable mouse
