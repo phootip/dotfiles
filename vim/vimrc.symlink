@@ -29,7 +29,8 @@ set mousehide " Hide mouse when typing
 set number
 set clipboard=unnamed
 set showcmd
-let g:netrw_browse_split=4      " Open file in previous buffer
+" let g:netrw_browse_split=4      " Open file in previous buffer
+let NERDTreeShowHidden=1
 
 set termguicolors
 

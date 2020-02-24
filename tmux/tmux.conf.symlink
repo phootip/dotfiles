@@ -1,3 +1,5 @@
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
 # unbind
 unbind C-b
 set -g prefix C-a
@@ -18,9 +20,9 @@ set -g status-right "%H:%M"
 
 # mouse scroll (for now)
 set -g mouse on
-# vim navigation
+# vim-style terminal navigation
+bind-key -n 'Escape' if-shell "$is_vim" 'send-keys Escape' 'copy-mode'
 set-window-option mode-keys vi
-
 # resize pane
 bind-key -r > resize-pane -R 15
 bind-key -r < resize-pane -L 15
@@ -33,9 +35,7 @@ setw -g pane-base-index 1
 # set-option -g set-titles on
 # set-option -g set-titles-string "#T - #W"
 
-# vim-style keys
-is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+# vim-style pane navigation keys
 bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h'  'select-pane -L'
 bind-key -n 'C-j' if-shell "$is_vim" 'send-keys C-j'  'select-pane -D'
 bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k'  'select-pane -U'
@@ -54,6 +54,7 @@ bind-key -T copy-mode-vi 'C-l' select-pane -R
 bind | split-window -h -c "#{pane_current_path}"
 bind _ split-window -v -c "#{pane_current_path}"
 bind-key -n ^n next-window
+bind-key -n ^p previous-window
 
 # reload config file
 bind r source-file ~/.tmux.conf \; display "Config Reloaded!"

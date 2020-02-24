@@ -28,7 +28,8 @@ set-window-option -g window-status-style fg=$base03,bg=$base00
 set-window-option -g window-status-format "(#I) #W |"
 
 # active window title colors
-set-window-option -g window-status-current-style fg=$base0C,bg=$base00
+# set-window-option -g window-status-current-style fg=$base0C,bg=$base00
+set -g window-status-current-style "fg=colour128,bg=$base00"
 set-window-option -g window-status-current-format "#[bold](#I) #W |"
 
 # pane border colors

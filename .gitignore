@@ -1,3 +1,4 @@
 Brewfile.lock.json
 vim/vim.symlink/bundle/*
+**/*.netrwhist
 *.swp

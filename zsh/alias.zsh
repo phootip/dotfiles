@@ -1,0 +1,2 @@
+alias watch='watch '
+
