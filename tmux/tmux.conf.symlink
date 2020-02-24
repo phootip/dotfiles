@@ -2,9 +2,10 @@
 unbind C-b
 set -g prefix C-a
 bind C-a send-prefix
+set -g repeat-time 10000
 
-# remove esc
-# set -s escape-time 0
+# remove esc delay
+set -s escape-time 0
 
 # make window/pane index start with 1
 set -g base-index 1
@@ -15,6 +16,16 @@ set -g status-position bottom
 set -g status-justify centre
 set -g status-right "%H:%M"
 
+# mouse scroll (for now)
+set -g mouse on
+# vim navigation
+set-window-option mode-keys vi
+
+# resize pane
+bind-key -r > resize-pane -R 15
+bind-key -r < resize-pane -L 15
+bind-key -r - resize-pane -D 2
+bind-key -r + resize-pane -U 2
 # make window/pane index start with 1
 set -g base-index 1
 setw -g pane-base-index 1
@@ -41,7 +52,7 @@ bind-key -T copy-mode-vi 'C-k' select-pane -U
 bind-key -T copy-mode-vi 'C-l' select-pane -R
 # split window and fix path for tmux 1.9
 bind | split-window -h -c "#{pane_current_path}"
-bind - split-window -v -c "#{pane_current_path}"
+bind _ split-window -v -c "#{pane_current_path}"
 bind-key -n ^n next-window
 
 # reload config file
