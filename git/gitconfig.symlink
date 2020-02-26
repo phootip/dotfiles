@@ -2,7 +2,7 @@
 	name = phootip
 	email = phootip.t@gmail.com
 [core]
-  excludesfile = /Users/nuttapol/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [color]
 	ui = auto
 	branch = auto
