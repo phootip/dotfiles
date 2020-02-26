@@ -53,6 +53,7 @@ bind-key -T copy-mode-vi 'C-l' select-pane -R
 # split window and fix path for tmux 1.9
 bind | split-window -h -c "#{pane_current_path}"
 bind _ split-window -v -c "#{pane_current_path}"
+# window navigation
 bind-key -n ^n next-window
 bind-key -n ^p previous-window
 
