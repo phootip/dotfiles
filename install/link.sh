@@ -21,3 +21,4 @@ for file in $linkables ; do
     fi
 done
 
+touch $HOME/.dotfiles/zsh/local.zsh

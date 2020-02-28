@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 # WSL permission sucks
 umask 022
 # If you come from bash you might have to change your $PATH.
@@ -86,3 +87,4 @@ source "$HOME/.dotfiles/pm/pmzsh.sh"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 
+zprof
