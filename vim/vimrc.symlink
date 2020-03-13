@@ -3,15 +3,19 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
 Plugin 'wincent/command-t'
 " Plugin 'benmills/vimux'
+" Plugin 'junegunn/fzf'
+" Plugin 'valloric/youcompleteme'
+" Plugin 'easymotion/vim-easymotion'
+" Plugin 'tpope/vim-commentary'
 call vundle#end()
 
 colorscheme gruvbox
@@ -44,6 +48,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" key mapping
+let mapleader = "\<Space>"
+" reload vimrc
+nnoremap <leader>r :so $MYVIMRC<CR>
+" tab navigation
+nnoremap J :tabprev<CR> 
+nnoremap K :tabnext<CR> 
+
 
 syntax on
 filetype plugin indent on
