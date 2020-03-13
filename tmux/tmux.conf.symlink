@@ -30,10 +30,13 @@ bind-key -r > resize-pane -R 15
 bind-key -r < resize-pane -L 15
 bind-key -r - resize-pane -D 2
 bind-key -r + resize-pane -U 2
+# new window
+bind-key t new-window
 # make window/pane index start with 1
 set -g base-index 1
 setw -g pane-base-index 1
-
+# broadcast input
+bind-key b setw synchronize-panes
 # set-option -g set-titles on
 # set-option -g set-titles-string "#T - #W"
 

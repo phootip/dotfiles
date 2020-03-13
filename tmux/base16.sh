@@ -50,8 +50,11 @@ set-option -g message-style bg=$base00,fg=$base0C
 set-window-option -g clock-mode-colour $base0C
 
 tm_session_name="#[default,bg=$base00,fg=$base0E] #S "
-set -g status-left "$tm_session_name"
+tm_is_prefix="#{?client_prefix,#[reverse] <Prefix> #[noreverse] ,}"
+set -g status-left "$tm_session_name $tm_is_prefix"
 
+# set-option -ag status-right '#{?pane_synchronized, #[bg=blue]SYNC!!!#[default],}'
+tm_sync="#{?pane_synchronized, #[bg=blue] ** SYNC ** #[default],}"
 tm_date="#[default,bg=$base00,fg=$base0C] %R"
 tm_host="#[fg=$base0E,bg=$base00] #h "
-set -g status-right "$tm_date $tm_host"
+set -g status-right "$tm_sync $tm_date $tm_host"

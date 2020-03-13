@@ -11,7 +11,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'wincent/command-t'
-Plugin 'benmills/vimux'
+" Plugin 'benmills/vimux'
 call vundle#end()
 
 colorscheme gruvbox
