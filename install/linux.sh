@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
-echo "TODO: install vim,tmux, any other things"
-apt-get install vim
-apt-get install tmux
+echo "TODO: installing brew for Ubuntu"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+sudo apt-get install build-essential curl file git
+
+echo "add this"
+# test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+# test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+# echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
