@@ -16,6 +16,7 @@ base0C='#75B5AA' # - Support, Regular Expressions, Escape Characters, Markup Quo
 base0D='#6A9FB5' # - Functions, Methods, Attribute IDs, Headings
 base0E='#AA759F' # - Keywords, Storage, Selector, Markup Italic, Diff Changed
 base0F='#8F5536' # - Deprecated, Opening/Closing Embedded Language Tags, e.g. <? php ?>
+base10='colour236' # - Inactive panes
 
 set -g status-left-length 32
 set -g status-right-length 150
@@ -24,20 +25,20 @@ set -g status-interval 5
 # default statusbar colors
 set-option -g status-style fg=$base02,bg=$base00
 
-set-window-option -g window-status-style fg=$base03,bg=$base00
-set-window-option -g window-status-format "(#I) #W |"
+set -g window-status-style fg=$base03,bg=$base00
+set -g window-status-format "(#I) #W |"
 
 # active window title colors
 # set-window-option -g window-status-current-style fg=$base0C,bg=$base00
 set -g window-status-current-style "fg=colour128,bg=$base00"
-set-window-option -g window-status-current-format "#[bold](#I) #W |"
+set -g window-status-current-format "#[bold](#I) #W |"
 
 # pane border colors
-set-window-option -g pane-border-style fg=$base03,bg=$base00
-set-window-option -g window-active-style bg=terminal
+set -g pane-border-style fg=$base03,bg=$base00
+set -g window-active-style bg=terminal
 # set-window-option -g window-style bg=black
-set -g window-style 'bg=black'
-set -g pane-border-style 'bg=black'
+set -g window-style "bg=$base10"
+set -g pane-border-style "bg=$base10"
 set -g pane-active-border-style 'fg=colour128'
 # message text
 set-option -g message-style bg=$base00,fg=$base0C
