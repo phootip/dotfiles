@@ -47,21 +47,12 @@ if ! grep "$zsh_path" /etc/shells; then
     echo "adding $zsh_path to /etc/shells"
     echo "$zsh_path" | sudo tee -a /etc/shells
 fi
-
 if [[ "$SHELL" != "$zsh_path" ]]; then
     chsh -s "$zsh_path"
     echo "default shell changed to $zsh_path"
 fi
 
-if ! [[ -d $HOME/.oh-my-zsh ]]; then
-    echo "No oh-my-zsh, installing..."
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    rm $HOME/.zshrc
-    mv $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-fi
-
+# install with Vundle
 if ! [[ -d $HOME/.vim/bundle/Vundle.vim ]]; then
     echo "No Vundle, installing..."
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
