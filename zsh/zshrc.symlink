@@ -1,20 +1,15 @@
 # zmodload zsh/zprof
 # WSL permission sucks
 umask 022
+HISTSIZE=SAVEHIST=50000
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 # load antigen
 source /usr/local/share/antigen/antigen.zsh
 
-export TERM="xterm-256color"
-
-# plugins=(
-# 	git
-# 	zsh-autosuggestions
-# 	docker
-# 	zsh-syntax-highlighting
-# 	colored-man-pages
-# 	)
 antigen use oh-my-zsh
-# antigen theme robbyrussell
 antigen theme denysdovhan/spaceship-prompt
 antigen bundle mafredri/zsh-async
 # antigen bundle sindresorhus/pure
