@@ -16,3 +16,8 @@
 	whoami = config user.email
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 	s = status -s
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
