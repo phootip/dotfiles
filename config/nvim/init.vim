@@ -1,1 +1,1 @@
-/Users/phootip/.vimrc
+/home/phootip/.vimrc
