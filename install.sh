@@ -59,6 +59,12 @@ if ! [[ -d $HOME/.vim/bundle/Vundle.vim ]]; then
     vim +PluginInstall +qall
 fi
 
+# install Tmux Plugin Manager
+if ! [[ -d $HOME/.dotfiles/tmux/plugins/tpm/tpm ]]; then
+    echo "No tpm, installing..."
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 echo "Sadly you have to setup your termianl and fonts (for now)"
 echo "for Windows https://medium.com/@jrcharney/bash-on-ubuntu-on-windows-the-almost-complete-set-up-1dd3cb89b794"
 echo "Done. Reload your terminal."
