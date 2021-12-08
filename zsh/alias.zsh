@@ -1,6 +1,7 @@
 alias watch='watch '
 alias loadnvm="source $NVM_DIR/nvm.sh"
 alias vim="nvim"
+alias first_pod="kgpo | head -2 | tail -1 | cut -d ' ' -f1"
 
 # https://unix.stackexchange.com/questions/236094/how-to-remove-the-last-command-or-current-command-for-bonus-from-zsh-history
 alias forget=' my_remove_last_history_entry'
@@ -27,3 +28,23 @@ my_remove_last_history_entry() {
     mv "$history_temp_file" "$history_file"
     fc -R
 }
+
+# uncomment to check command line starting time
+# typeset -F SECONDS start 
+
+# # define precmd hook function
+# precmd () {
+#     # save time since start of zsh in start
+#     start=$SECONDS
+# }
+
+# # define zle-line-init function
+# zle-line-init () {
+#      # print time since start was set after prompt
+#      PREDISPLAY="[$(( $SECONDS - $start ))] "
+# }
+# # link the zle-line-init widget to the function of the same name
+# test_cmd_time () {
+#     zle -N zle-line-init
+#     zprof
+# }
