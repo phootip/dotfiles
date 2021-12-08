@@ -1,6 +1,5 @@
 [user]
 	name = phootip
-	email = phootip.t@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
 [color]
@@ -16,3 +15,6 @@
 	whoami = config user.email
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 	s = status -s
+
+[include]
+  path = ~/.dotfiles/git/local.gitconfig
