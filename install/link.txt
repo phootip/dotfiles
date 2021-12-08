@@ -1,0 +1,7 @@
+~/.dotfiles/vim/.vim
+~/.dotfiles/vim/.vimrc
+~/.dotfiles/tmux/.tmux.conf
+~/.dotfiles/zsh/.zshrc
+~/.dotfiles/hyper/.hyper.js
+~/.dotfiles/git/.gitconfig
+~/.dotfiles/git/.gitignore_global

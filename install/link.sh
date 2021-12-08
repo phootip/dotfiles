@@ -10,9 +10,9 @@ if ! [[ -d $HOME/.dotfiles ]]; then
     ln -s `(pwd)` ~/.dotfiles
 fi
 
-linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
+linkables=$( cat $DOTFILES/install/link.txt )
 for file in $linkables ; do
-    target="$HOME/.$( basename "$file" '.symlink' )"
+    target="$HOME/$( basename "$file" )"
     if [ -e "$target" ]; then
         echo "~${target#$HOME} already exists... Skipping."
     else
@@ -26,17 +26,7 @@ echo "=============================="
 if [ ! -d "$HOME/.config" ]; then
     echo "Creating ~/.config"
     mkdir -p "$HOME/.config"
+    ln -s "$DOTFILE/config" "$HOME/.config/config"
 fi
-
-config_files=$( find "$DOTFILES/config" -maxdepth 1 2>/dev/null )
-for config in $config_files; do
-    target="$HOME/.config/$( basename "$config" )"
-    if [ -e "$target" ]; then
-        echo "~${target#$HOME} already exists... Skipping."
-    else
-        echo "Creating symlink for $config"
-        ln -s "$config" "$target"
-    fi
-done
 
 touch $HOME/.dotfiles/zsh/local.zsh

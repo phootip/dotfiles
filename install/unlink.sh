@@ -4,9 +4,10 @@ DOTFILES=$HOME/.dotfiles
 
 echo -e "\\nRemoving symlinks"
 echo "=============================="
-linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
+# linkables=$( cat $DOTFILES/install/link.txt )
+linkables=$( cat install/link.txt )
 for file in $linkables ; do
-  target="$HOME/.$( basename "$file" '.symlink' )"
+  target="$HOME/$( basename "$file" )"
   if [ -L "$target" ]; then
     echo "~${target#$HOME} Unlinking..."
     unlink "$target"
