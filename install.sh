@@ -9,23 +9,20 @@ echo "Installing dotfiles."
 # source install/backup.sh
 source install/link.sh
 
-# only perform macOS-specific install
-if [ "$(uname)" == "Darwin" ]; then
-    read -rn 1 -p "Setup brew and other Mac configurations? [y/N] " ans
-    if [[ $ans =~ ^([Yy])$ ]]; then
-        source install/macos.sh
-    fi
-    # source install/macos.sh
+# Installing brew
+if test ! "$( command -v brew )"; then
+    echo "Installing homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+brew bundle
 
-# only perform Linux-specific install
-if [ "$(uname)" == "Linux" ]; then
-    read -rn 1 -p "Setup apt-get and other Linux configurations? [y/N] " ans
-    if [[ $ans =~ ^([Yy])$ ]]; then
-        source install/linux.sh
-    fi
-    # source install/macos.sh
-fi
+# only perform macOS-specific install
+# if [ "$(uname)" == "Darwin" ]; then
+#     read -rn 1 -p "Setup brew and other Mac configurations? [y/N] " ans
+#     if [[ $ans =~ ^([Yy])$ ]]; then
+#         source install/macos.sh
+#     fi
+# fi
 
 echo -e "\\nGeneral Install"
 echo "=============================="
