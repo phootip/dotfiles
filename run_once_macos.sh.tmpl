@@ -1,7 +1,7 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 
-brew bundle --file BrewfileMac
+brew bundle --no-lock --file ".local/share/chezmoi/BrewfileMac"
 
 echo -e "\\n\\nSetting OS X settings"
 echo "=============================="

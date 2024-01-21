@@ -1,2 +1,2 @@
 #!/bin/bash
-brew bundle --no-lock
+brew bundle --no-lock --file ".local/share/chezmoi/Brewfile"
