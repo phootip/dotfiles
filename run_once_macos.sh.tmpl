@@ -1,0 +1,24 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+brew bundle --file BrewfileMac
+
+echo -e "\\n\\nSetting OS X settings"
+echo "=============================="
+
+echo "Show Path bar in Finder"
+defaults write com.apple.finder ShowPathbar -bool true
+
+echo "Show Status bar in Finder"
+defaults write com.apple.finder ShowStatusBar -bool true
+
+echo "Disable press-and-hold for keys in favor of key repeat"
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+echo "Set a blazingly fast keyboard repeat rate"
+defaults write NSGlobalDomain KeyRepeat -int 2
+
+# echo "Set a shorter Delay until key repeat"
+# defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+{{ end -}}
