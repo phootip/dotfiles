@@ -15,6 +15,4 @@ choco install chezmoi # windows
 sh -c "$(curl -fsLS get.chezmoi.io)" # curl
 
 chezmoi init --apply $GITHUB_USERNAME
-# set git global email
-git config --global user.email "{email}"
 ```
