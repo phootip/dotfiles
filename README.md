@@ -15,4 +15,6 @@ choco install chezmoi # windows
 sh -c "$(curl -fsLS get.chezmoi.io)" # curl
 
 chezmoi init --apply $GITHUB_USERNAME
+# for short live session
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --one-shot $GITHUB_USERNAME
 ```

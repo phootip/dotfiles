@@ -1,6 +1,10 @@
-sindresorhus/pure
+ohmyzsh/ohmyzsh path:plugins/rails kind:fpath
+ohmyzsh/ohmyzsh path:lib
+# sindresorhus/pure
 
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/starship
+
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-completions

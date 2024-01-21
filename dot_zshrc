@@ -1,7 +1,10 @@
-# zmodload zsh/zprof
+# remove OMZ error
+autoload -Uz compinit
+compinit
 # WSL permission sucks
 umask 022
 HISTSIZE=SAVEHIST=50000
+HISTFILE=~/.config/zsh/zsh_history
 setopt SHARE_HISTORY             # Share history between all sessions.
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
 setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
@@ -12,12 +15,11 @@ source $HOME/.local/share/antidote/antidote.zsh
 
 export ZDOT=$HOME/.local/share/zsh
 antidote load $ZDOT/zsh_plugins.txt
-source "$ZDOT/bindkey.zsh"
+# antidote load
 source "$ZDOT/alias.zsh"
+source "$ZDOT/bindkey.zsh"
 source "$ZDOT/prompt.zsh"
 source "$ZDOT/pmzsh.sh"
 # export GPG_TTY="$(tty)"
 # export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # gpg-connect-agent updatestartuptty /bye
-
-# [[ -s "/Users/phootip/.gvm/scripts/gvm" ]] && source "/Users/phootip/.gvm/scripts/gvm"

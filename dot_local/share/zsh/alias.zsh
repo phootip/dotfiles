@@ -2,6 +2,8 @@ alias watch='watch '
 alias loadnvm="source $NVM_DIR/nvm.sh"
 alias vim="nvim"
 alias first_pod="kgpo | head -2 | tail -1 | cut -d ' ' -f1"
+alias ll='ls -lh'
+alias la='ls -lAh'
 
 # https://unix.stackexchange.com/questions/236094/how-to-remove-the-last-command-or-current-command-for-bonus-from-zsh-history
 alias forget=' my_remove_last_history_entry'
