@@ -1,0 +1,6 @@
+# remove OMZ error
+autoload -Uz compinit
+compinit
+# WSL permission sucks
+umask 022
+export PATH={{ .brewPath }}:$PATH

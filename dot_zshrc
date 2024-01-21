@@ -1,8 +1,6 @@
-# remove OMZ error
-autoload -Uz compinit
-compinit
-# WSL permission sucks
-umask 022
+export ZDOT=$HOME/.local/share/zsh
+source "$ZDOT/init.zsh"
+
 HISTSIZE=SAVEHIST=50000
 HISTFILE=~/.config/zsh/zsh_history
 setopt SHARE_HISTORY             # Share history between all sessions.
@@ -13,13 +11,8 @@ export LANG=en_US.UTF-8
 
 source $HOME/.local/share/antidote/antidote.zsh
 
-export ZDOT=$HOME/.local/share/zsh
 antidote load $ZDOT/zsh_plugins.txt
-# antidote load
 source "$ZDOT/alias.zsh"
 source "$ZDOT/bindkey.zsh"
 source "$ZDOT/prompt.zsh"
 source "$ZDOT/pmzsh.sh"
-# export GPG_TTY="$(tty)"
-# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-# gpg-connect-agent updatestartuptty /bye
