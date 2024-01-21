@@ -8,18 +8,19 @@ setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 # load antigen
 # source /usr/local/share/antigen/antigen.zsh
-source /opt/homebrew/share/antigen/antigen.zsh
+# source /opt/homebrew/share/antigen/antigen.zsh
+source /home/linuxbrew/.linuxbrew/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
-antigen theme denysdovhan/spaceship-prompt
+# antigen theme denysdovhan/spaceship-prompt
 antigen bundle mafredri/zsh-async
-# antigen bundle sindresorhus/pure
+antigen bundle sindresorhus/pure --branch=main
 antigen bundle git
 antigen bundle colored-man-pages
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
-antigen bundle skywind3000/z.lua
+# antigen bundle skywind3000/z.lua
 antigen apply
 
 export LANG=en_US.UTF-8

@@ -10,5 +10,3 @@ brew "wget"
 brew "fzf"
 
 brew "tldr"
-brew "youtube-dl"
-
