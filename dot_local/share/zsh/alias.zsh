@@ -4,6 +4,8 @@ alias vim="nvim"
 alias first_pod="kgpo | head -2 | tail -1 | cut -d ' ' -f1"
 alias ll='ls -lh'
 alias la='ls -lAh'
+export LC_ALL=C
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 tmuxcolor() {
 for i in {0..255}; do
