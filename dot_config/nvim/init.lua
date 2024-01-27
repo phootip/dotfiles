@@ -1,2 +1,2 @@
-require("users.remap")
 require("users.plugin")
+require("users.remap")
