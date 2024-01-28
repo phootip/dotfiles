@@ -1,13 +1,17 @@
 alias watch='watch '
 alias loadnvm="source $NVM_DIR/nvm.sh"
 alias vim="nvim"
+alias tmux="tmux -u"
 alias first_pod="kgpo | head -2 | tail -1 | cut -d ' ' -f1"
 alias ll='ls -lh'
 alias la='ls -lAh'
-export LC_ALL=C
+# export LC_ALL=C
+export EDITOR=nvim
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias r='ranger'
+alias reload_shell='source ~/.zshrc'
 
-tmuxcolor() {
+tmux_color() {
 for i in {0..255}; do
   printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n"
 done
