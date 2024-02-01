@@ -9,7 +9,7 @@ export EDITOR=nvim
 alias lazyvim="NVIM_APPNAME=lazyvim nvim"
 export PATH=~/.local/bin:$PATH
 # tmux
-export LC_ALL="en_US.UTF-8"
+# export LC_ALL="en_US.UTF-8"
 alias tmux="tmux -u"
 # ranger
 # export LC_ALL=C
