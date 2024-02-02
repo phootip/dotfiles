@@ -1,14 +1,19 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system(
-    { "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", -- latest stable release
-      lazypath })
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {
     "machakann/vim-sandwich",
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
   {
     "folke/flash.nvim",
@@ -24,10 +29,6 @@ require("lazy").setup({
     },
   },
   {
-    "aserowy/tmux.nvim",
-    cond = not vim.g.vscode,
-    config = function()
-      return require("tmux").setup()
-    end
-  }
+    "christoomey/vim-tmux-navigator",
+  },
 })
