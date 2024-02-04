@@ -11,6 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
+  { import = "plugins" },
   {
     "machakann/vim-sandwich",
     event = "VeryLazy",
@@ -28,13 +29,4 @@ require("lazy").setup({
       { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,     desc = "Toggle Flash Search" },
     },
   },
-  {
-    "christoomey/vim-tmux-navigator",
-  },
-  {
-    'vscode-neovim/vscode-multi-cursor.nvim',
-    event = 'VeryLazy',
-    cond = not not vim.g.vscode,
-    opts = { default_mappings = true },
-  }
 })
