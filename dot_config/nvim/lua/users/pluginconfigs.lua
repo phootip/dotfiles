@@ -19,8 +19,10 @@ vim.keymap.set("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers
 vim.keymap.set("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
 
 -- harpoon
-require("telescope").load_extension("harpoon")
-vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
-vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
-vim.keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
-vim.keymap.set('n', '<leader>hm', ':Telescope harpoon marks<CR>')
+local harpoon = require("harpoon")
+-- require("telescope").load_extension("harpoon")
+vim.keymap.set('n', '<leader>ha', function() harpoon:list():append() end)
+vim.keymap.set('n', '<leader>hn', function() harpoon:list():next() end)
+vim.keymap.set('n', '<leader>hp', function() harpoon:list():prev() end)
+vim.keymap.set('n', '<leader>he', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
