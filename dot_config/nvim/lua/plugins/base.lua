@@ -3,7 +3,7 @@ return {
   { "christoomey/vim-tmux-navigator" },
   { "nvim-telescope/telescope.nvim", tag = '0.1.5' },
   { "ThePrimeagen/harpoon",          branch = "harpoon2" },
-  -- { "mg979/vim-visual-multi" },
+  { "mg979/vim-visual-multi" },
   { "machakann/vim-sandwich", event = "VeryLazy" },
   {
     "folke/flash.nvim",
