@@ -7,6 +7,7 @@ alias loadnvm="source $NVM_DIR/nvm.sh"
 alias vim="nvim"
 export EDITOR=nvim
 alias lazyvim="NVIM_APPNAME=lazyvim nvim"
+alias laz="NVIM_APPNAME=lazyvim nvim"
 export PATH=~/.local/bin:$PATH
 # tmux
 # export LC_ALL="en_US.UTF-8"
