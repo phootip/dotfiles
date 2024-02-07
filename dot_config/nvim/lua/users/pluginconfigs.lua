@@ -25,4 +25,3 @@ vim.keymap.set('n', '<leader>ha', function() harpoon:list():append() end)
 vim.keymap.set('n', '<leader>hn', function() harpoon:list():next() end)
 vim.keymap.set('n', '<leader>hp', function() harpoon:list():prev() end)
 vim.keymap.set('n', '<leader>he', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
