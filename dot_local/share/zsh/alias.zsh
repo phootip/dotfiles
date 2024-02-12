@@ -9,6 +9,9 @@ alias vim="nvim"
 alias v="NVIM_APPNAME=lazyvim nvim"
 alias laz="NVIM_APPNAME=lazyvim nvim"
 export PATH=~/.local/bin:$PATH
+# lazygit
+export XDG_CONFIG_HOME="$HOME/.config"
+alias g="lazygit"
 # tmux
 # export LC_ALL="en_US.UTF-8"
 # alias tmux="tmux -u"
