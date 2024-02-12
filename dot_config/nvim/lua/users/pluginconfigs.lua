@@ -1,6 +1,3 @@
--- sandwich
--- vim.g.sandwich_no_default_key_mappings = 1
-
 -- telescope
 vim.keymap.set("", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
