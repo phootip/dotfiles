@@ -1,4 +1,10 @@
+gui:
+  showFileTree: false
 git:
   log:
     showGraph: 'always'
     showWholeGraph: true
+keybinding:
+  universal:
+    nextScreenMode: '='
+    prevScreenMode: '-'
