@@ -16,6 +16,7 @@ alias g="lazygit"
 # export LC_ALL="en_US.UTF-8"
 # alias tmux="tmux -u"
 alias t="tmux"
+alias mux="tmuxinator"
 # ranger
 # export LC_ALL=C
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
