@@ -8,3 +8,13 @@ keybinding:
   universal:
     nextScreenMode: '='
     prevScreenMode: '-'
+    prevBlock-alt: '<c-k>'
+    nextBlock-alt: '<c-j>'
+    nextTab: 'l'
+    prevTab: 'h'
+    # scrollLeft: 'h'
+    # scrollRight: 'l'
+    copyToClipboard: 'y'
+  commits:
+    moveDownCommit: '<c-d>'
+    moveUpCommit: '<c-u>'
