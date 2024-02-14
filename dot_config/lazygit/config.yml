@@ -8,8 +8,8 @@ keybinding:
   universal:
     nextScreenMode: '='
     prevScreenMode: '-'
-    prevBlock-alt: '<c-k>'
-    nextBlock-alt: '<c-j>'
+    prevBlock-alt: 'K'
+    nextBlock-alt: 'J'
     nextTab: 'l'
     prevTab: 'h'
     # scrollLeft: 'h'
