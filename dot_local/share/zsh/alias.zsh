@@ -3,7 +3,7 @@ alias watch='watch '
 alias ll='ls -lh'
 alias la='ls -lAh'
 # nvim
-export EDITOR=nvim
+export EDITOR="nvim"
 alias loadnvm="source $NVM_DIR/nvm.sh"
 alias vim="nvim"
 alias v="NVIM_APPNAME=lazyvim nvim"

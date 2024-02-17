@@ -4,6 +4,9 @@ git:
   log:
     showGraph: 'always'
     showWholeGraph: true
+os:
+  # editPreset: 'nvim'
+  edit: 'NVIM_APPNAME=lazyvim nvim'
 keybinding:
   universal:
     nextScreenMode: '='
