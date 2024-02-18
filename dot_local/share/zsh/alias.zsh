@@ -2,6 +2,7 @@ alias reload_shell='source ~/.zshrc'
 alias watch='watch '
 alias ll='ls -lh'
 alias la='ls -lAh'
+alias f='cd $(find -maxdepth 4 -type d | fzf)'
 # nvim
 export EDITOR="nvim"
 alias loadnvm="source $NVM_DIR/nvm.sh"
@@ -16,6 +17,7 @@ alias g="lazygit"
 # export LC_ALL="en_US.UTF-8"
 # alias tmux="tmux -u"
 alias t="tmux"
+alias ta="tmux new -As personal"
 alias mux="tmuxinator"
 # ranger
 # export LC_ALL=C
