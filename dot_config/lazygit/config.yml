@@ -21,3 +21,6 @@ keybinding:
   commits:
     moveDownCommit: '<c-d>'
     moveUpCommit: '<c-u>'
+    renameCommit: 'g'
+    renameCommitWithEditor: 'R'
+    viewResetOptions: 'r'
