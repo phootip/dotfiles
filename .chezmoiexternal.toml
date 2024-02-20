@@ -2,7 +2,13 @@
 type = "git-repo"
 url = "https://github.com/mattmc3/antidote.git"
 refreshPeriod = "168h"
+
 [".config/tmux/plugins/tpm"]
 type = "git-repo"
 url = "https://github.com/tmux-plugins/tpm.git"
+refreshPeriod = "168h"
+
+[".config/ranger/plugins/ranger_devicons"]
+type = "git-repo"
+url = "https://github.com/alexanderjeurissen/ranger_devicons"
 refreshPeriod = "168h"
