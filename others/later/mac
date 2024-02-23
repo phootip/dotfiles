@@ -1,0 +1,5 @@
+brew install koekeishiya/formulae/yabai
+
+brew tap FelixKratz/formulae
+brew install sketchybar
+

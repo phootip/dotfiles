@@ -1,7 +1,10 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 
-brew bundle --no-lock --file ".local/share/chezmoi/BrewfileMac"
+read -rn 1 -p "Setup macos brew specific? [y/n] " ans
+if [[ $ans =~ ^([Yy])$ ]]; then
+  brew bundle --no-lock --file ".local/share/chezmoi/BrewfileMac"
+fi
 
 echo -e "\\n\\nSetting OS X settings"
 echo "=============================="
@@ -20,5 +23,8 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 
 # echo "Set a shorter Delay until key repeat"
 # defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+echo "Show active apps only in Dock"
+defaults write com.apple.dock static-only -bool true; killall Dock
 
 {{ end -}}
