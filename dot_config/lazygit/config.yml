@@ -4,6 +4,7 @@ git:
   log:
     showGraph: 'always'
     showWholeGraph: true
+  # branchLogCmd: 'git log --color=always --decorate --oneline --graph --stat'
 os:
   # editPreset: 'nvim'
   edit: 'NVIM_APPNAME=lazyvim nvim'
