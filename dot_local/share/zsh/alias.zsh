@@ -18,6 +18,7 @@ alias g="lazygit"
 # alias tmux="tmux -u"
 alias t="tmux"
 alias ta="tmux new -As personal"
+alias tk="tmux kill-server"
 alias mux="tmuxinator"
 # ranger
 # export LC_ALL=C
