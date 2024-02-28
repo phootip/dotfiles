@@ -3,12 +3,13 @@ alias watch='watch '
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias f='cd $(find -maxdepth 4 -type d | fzf)'
+alias cd='z'
 # nvim
 export EDITOR="nvim"
 alias loadnvm="source $NVM_DIR/nvm.sh"
 alias vim="nvim"
+alias nvim="NVIM_APPNAME=lazyvim nvim"
 alias v="NVIM_APPNAME=lazyvim nvim"
-alias laz="NVIM_APPNAME=lazyvim nvim"
 export PATH=~/.local/bin:$PATH
 # lazygit
 export XDG_CONFIG_HOME="$HOME/.config"
