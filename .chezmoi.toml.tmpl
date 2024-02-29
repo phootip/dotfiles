@@ -6,4 +6,6 @@
   brewPath = "/opt/homebrew/bin"
 {{- else if eq .chezmoi.os "linux" }}
   brewPath = "/home/linuxbrew/.linuxbrew/bin"
+{{- else }}
+  brewPath = "/tmp"
 {{- end }}
