@@ -1,1 +1,2 @@
 cask "alt-tab"
+brew "meetingbar"
