@@ -8,6 +8,7 @@ git:
 os:
   # editPreset: 'nvim'
   edit: 'NVIM_APPNAME=lazyvim nvim'
+quitOnTopLevelReturn: true
 keybinding:
   universal:
     nextScreenMode: '='
@@ -25,3 +26,4 @@ keybinding:
     renameCommit: 'g'
     renameCommitWithEditor: 'R'
     viewResetOptions: 'r'
+    copyCommitAttributeToClipboard: 'Y'
