@@ -1,5 +1,5 @@
 {
-  "name": "Sofle",
+  "name": "Sofle v1",
   "vendorProductId": 4231135879,
   "macros": [
     "{KC_LSFT,KC_LCTL,KC_TAB}",
@@ -49,7 +49,7 @@
       "KC_LALT",
       "KC_LGUI",
       "MO(2)",
-      "KC_SPC",
+      "MT(MOD_LSFT,KC_SPC)",
       "KC_MUTE",
       "KC_BSPC",
       "KC_0",
@@ -79,7 +79,7 @@
       "KC_RALT",
       "KC_RCTL",
       "MO(3)",
-      "KC_ENT",
+      "MT(MOD_LALT | MOD_RALT,KC_ENT)",
       "KC_NO"
     ],
     [
@@ -165,7 +165,7 @@
       "MACRO(2)",
       "KC_TRNS",
       "KC_EQL",
-      "KC_MINS",
+      "KC_PSCR",
       "KC_LALT",
       "S(KC_LBRC)",
       "S(KC_RBRC)",
@@ -220,8 +220,8 @@
       "KC_NO",
       "KC_NO",
       "KC_TRNS",
-      "S(KC_1)",
-      "S(KC_2)",
+      "RGB_TOG",
+      "BL_OFF",
       "KC_PGUP",
       "KC_PGDN",
       "S(KC_5)",
@@ -230,7 +230,7 @@
       "KC_CUT",
       "KC_COPY",
       "KC_PASTE",
-      "KC_NO",
+      "KC_CAPS",
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -269,5 +269,18 @@
       "KC_TRNS"
     ]
   ],
-  "encoders": []
+  "encoders": [
+    [
+      ["KC_VOLD", "KC_VOLU"],
+      ["KC_TRNS", "KC_TRNS"],
+      ["RGB_HUD", "RGB_HUI"],
+      ["RGB_VAD", "RGB_VAI"]
+    ],
+    [
+      ["KC_PGDN", "KC_PGUP"],
+      ["KC_TRNS", "KC_TRNS"],
+      ["RGB_SAD", "RGB_SAI"],
+      ["RGB_RMOD", "RGB_MOD"]
+    ]
+  ]
 }

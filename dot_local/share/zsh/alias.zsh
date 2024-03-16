@@ -4,6 +4,7 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 alias f='cd $(find -maxdepth 4 -type d | fzf)'
 alias cd='z'
+
 # nvim
 export EDITOR="nvim"
 alias loadnvm="source $NVM_DIR/nvm.sh"
@@ -11,20 +12,24 @@ alias vim="nvim"
 alias nvim="NVIM_APPNAME=lazyvim nvim"
 alias v="NVIM_APPNAME=lazyvim nvim"
 export PATH=~/.local/bin:$PATH
+
 # lazygit
 export XDG_CONFIG_HOME="$HOME/.config"
 alias g="lazygit"
+
 # tmux
 # export LC_ALL="en_US.UTF-8"
 # alias tmux="tmux -u"
 alias t="tmux"
-alias ta="tmux new -As notes"
+alias ta="cd ~/phootip && tmux new -As phootip"
 alias tk="tmux kill-server"
 alias mux="tmuxinator"
+
 # ranger
 # export LC_ALL=C
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias r='ranger'
+
 # kube
 alias first_pod="kgpo | head -2 | tail -1 | cut -d ' ' -f1"
 tmux_color() {
