@@ -16,6 +16,7 @@ export PATH=~/.local/bin:$PATH
 # lazygit
 export XDG_CONFIG_HOME="$HOME/.config"
 alias g="lazygit"
+alias d="lazydocker"
 
 # tmux
 # export LC_ALL="en_US.UTF-8"
