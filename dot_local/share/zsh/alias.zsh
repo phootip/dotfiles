@@ -9,7 +9,7 @@ alias cd='z'
 export EDITOR="nvim"
 alias loadnvm="source $NVM_DIR/nvm.sh"
 alias vim="nvim"
-alias nvim="NVIM_APPNAME=lazyvim nvim"
+# alias nvim="NVIM_APPNAME=lazyvim nvim"
 alias v="NVIM_APPNAME=lazyvim nvim"
 export PATH=~/.local/bin:$PATH
 
@@ -31,6 +31,17 @@ alias mux="tmuxinator"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias r='ranger'
 
+## Works
+# terraform
+alias tf='terraform'
+alias tfp='terraform plan -lock=false -out=changes.plan'
+alias tfa='terraform apply changes.plan'
+# terragrunt
+alias tg='terragrunt'
+alias tgp='terragrunt plan -lock=false -out=changes.plan'
+alias tga='terragrunt apply changes.plan'
+alias tgap='terragrunt run-all plan -lock=false -out=changes.plan'
+alias tgaa='terragrunt run-all apply changes.plan'
 # kube
 alias first_pod="kgpo | head -2 | tail -1 | cut -d ' ' -f1"
 tmux_color() {
