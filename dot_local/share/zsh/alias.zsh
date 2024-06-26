@@ -40,6 +40,7 @@ alias tfa='terraform apply changes.plan'
 alias tg='terragrunt'
 alias tgp='terragrunt plan -lock=false -out=changes.plan'
 alias tga='terragrunt apply changes.plan'
+alias tgpa='terragrunt run-all plan -lock=false -out=changes.plan'
 alias tgap='terragrunt run-all plan -lock=false -out=changes.plan'
 alias tgaa='terragrunt run-all apply changes.plan'
 # kube
