@@ -10,7 +10,9 @@ export EDITOR="nvim"
 alias loadnvm="source $NVM_DIR/nvm.sh"
 alias vim="nvim"
 # alias nvim="NVIM_APPNAME=lazyvim nvim"
-alias v="NVIM_APPNAME=lazyvim nvim"
+alias v="NVIM_APPNAME=lazyvim nvim -c 'SessionRestore'"
+alias vt="NVIM_APPNAME=lazyvim nvim -c 'terminal'"
+alias tv="NVIM_APPNAME=testnvim nvim"
 export PATH=~/.local/bin:$PATH
 
 # lazygit
@@ -43,6 +45,10 @@ alias tga='terragrunt apply changes.plan'
 alias tgpa='terragrunt run-all plan -lock=false -out=changes.plan'
 alias tgap='terragrunt run-all plan -lock=false -out=changes.plan'
 alias tgaa='terragrunt run-all apply changes.plan'
+# azure
+alias azl='az account show -o table'
+alias azl='az account list --query "[?isDefault==\`true\`]" -o table'
+alias azs='az account set --subscription'
 # kube
 alias first_pod="kgpo | head -2 | tail -1 | cut -d ' ' -f1"
 tmux_color() {
