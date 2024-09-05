@@ -2,28 +2,31 @@ gui:
   showFileTree: false
 git:
   log:
-    showGraph: 'always'
+    showGraph: "always"
     showWholeGraph: true
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
   # branchLogCmd: 'git log --color=always --decorate --oneline --graph --stat'
 os:
   # editPreset: 'nvim'
-  edit: 'NVIM_APPNAME=lazyvim nvim'
+  edit: "NVIM_APPNAME=lazyvim nvim"
 quitOnTopLevelReturn: true
 keybinding:
   universal:
-    nextScreenMode: '='
-    prevScreenMode: '-'
-    prevBlock-alt: 'K'
-    nextBlock-alt: 'J'
-    nextTab: 'l'
-    prevTab: 'h'
+    nextScreenMode: "="
+    prevScreenMode: "-"
+    prevBlock-alt: "K"
+    nextBlock-alt: "J"
+    nextTab: "l"
+    prevTab: "h"
     # scrollLeft: 'h'
     # scrollRight: 'l'
-    copyToClipboard: 'y'
+    copyToClipboard: "y"
   commits:
-    moveDownCommit: '<c-d>'
-    moveUpCommit: '<c-u>'
-    renameCommit: 'g'
-    renameCommitWithEditor: 'R'
-    viewResetOptions: 'r'
-    copyCommitAttributeToClipboard: 'Y'
+    moveDownCommit: "<c-d>"
+    moveUpCommit: "<c-u>"
+    renameCommit: "g"
+    renameCommitWithEditor: "R"
+    viewResetOptions: "r"
+    copyCommitAttributeToClipboard: "Y"
