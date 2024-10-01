@@ -2,3 +2,4 @@ README.md
 Brewfile*
 tmp/
 others
+*.local.*

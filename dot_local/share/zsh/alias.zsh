@@ -43,6 +43,7 @@ alias tfsl='terraform state list'
 alias tfss='terraform state show'
 # terragrunt
 alias tg='terragrunt'
+alias tgi='terragrunt init'
 alias tgp='terragrunt plan -lock=false -out=changes.plan'
 alias tga='terragrunt apply changes.plan'
 alias tgpa='terragrunt run-all plan -lock=false -out=changes.plan'
