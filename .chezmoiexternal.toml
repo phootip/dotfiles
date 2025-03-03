@@ -12,3 +12,8 @@ refreshPeriod = "168h"
 type = "git-repo"
 url = "https://github.com/alexanderjeurissen/ranger_devicons"
 refreshPeriod = "168h"
+
+[".local/share/zsh/kubectl_aliases.zsh"]
+type = "file"
+url = "https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases"
+refreshPeriod = "168h"
