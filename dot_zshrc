@@ -12,6 +12,7 @@ source $HOME/.local/share/antidote/antidote.zsh
 
 antidote load $ZDOT/zsh_plugins.txt
 source "$ZDOT/alias.zsh"
+source "$ZDOT/local.zsh"
 source "$ZDOT/bindkey.zsh"
 source "$ZDOT/prompt.zsh"
 source "$ZDOT/pmzsh.sh"
