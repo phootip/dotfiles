@@ -1,1 +1,4 @@
 tmp/
+
+## file that get skipped with: git update-index --skip-worktree {file}
+# dot_local/share/zsh/local.zsh
