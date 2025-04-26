@@ -15,6 +15,9 @@ config.send_composed_key_when_right_alt_is_pressed = false
 config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
 -- config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono", { weight = "Bold" })
 config.font_size = 15
+config.colors = {
+	cursor_bg = "#d466d8",
+}
 config.keys = {
 	-- change tab
 	-- { key = "]", mods = "SUPER|SHIFT", action = "DisableDefaultAssignment" },
