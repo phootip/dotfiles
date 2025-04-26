@@ -2,9 +2,9 @@ format = """
 $username\
 $hostname\
 $directory\
-\\[$git_branch\
+$git_branch\
 $git_state\
-$git_status\\]\
+$git_status\
 $cmd_duration\
 $fill\
 $line_break\
@@ -21,7 +21,7 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-format = "[$branch]($style)"
+format = "\\[[$branch]($style)"
 style = "bright-purple"
 
 [fill]
@@ -32,7 +32,7 @@ style = 'bold bright-green strikethrough'
 
 [git_status]
 # format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-format = '$all_status$ahead_behind'
+format = '$all_status$ahead_behind\]'
 ahead = '[⬆](bold purple)'
 behind = '[⬇](bold purple)'
 staged = '[✚](green)'

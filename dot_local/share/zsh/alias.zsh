@@ -24,7 +24,13 @@ alias d="lazydocker"
 # export LC_ALL="en_US.UTF-8"
 # alias tmux="tmux -u"
 alias t="tmux"
-alias ta="cd ~/phootip && tmux new -As phootip"
+ta() {
+    if [ -n "$TMUX" ]; then
+        echo "already in tmux"
+    else
+        cd ~/phootip  && tmux new -As phootip
+    fi
+}
 alias tk="tmux kill-server"
 alias mux="tmuxinator"
 
