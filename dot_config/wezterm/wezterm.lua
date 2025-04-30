@@ -4,6 +4,7 @@ local act = wezterm.action
 
 -- config.color_scheme = "Gruvbox Dark (Gogh)"
 config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "Dracula (Official)"
 -- config.default_domain = "WSL:Ubuntu-22.04"
 config.debug_key_events = true
 config.disable_default_key_bindings = true
