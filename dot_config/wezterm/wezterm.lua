@@ -10,6 +10,7 @@ config.debug_key_events = true
 config.disable_default_key_bindings = true
 config.hide_tab_bar_if_only_one_tab = true
 config.send_composed_key_when_right_alt_is_pressed = false
+config.window_background_opacity = 0.85
 -- config.font = wezterm.font("JetBrains Mono", { weight = "Regular" })
 -- config.font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = true })
 -- config.font = wezterm.font("Source Code Pro")
