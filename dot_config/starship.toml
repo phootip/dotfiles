@@ -12,6 +12,9 @@ $python\
 $character\
 """
 
+# [hostname]
+# ssh_only = false
+
 [directory]
 style = "blue"
 

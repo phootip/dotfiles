@@ -17,8 +17,13 @@ config.window_background_opacity = 0.85
 config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
 -- config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono", { weight = "Bold" })
 config.font_size = 15
+config.default_cursor_style = "BlinkingBlock"
+-- config.cursor_blink_rate = 800
+-- config.cursor_blink_ease_in = "Constant"
+-- config.cursor_blink_ease_out = "Constant"
 config.colors = {
 	cursor_bg = "#d466d8",
+	-- cursor_bg = "#ff0000",
 }
 config.keys = {
 	-- change tab
