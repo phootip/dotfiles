@@ -7,6 +7,7 @@ $git_state\
 $git_status\
 $cmd_duration\
 $fill\
+$time\
 $line_break\
 $python\
 $character\
@@ -17,6 +18,10 @@ $character\
 
 [directory]
 style = "blue"
+
+[time]
+disabled = false
+format = ' [$time]($style)'
 
 [character]
 success_symbol = "[❯](purple)"
@@ -35,7 +40,7 @@ style = 'bold bright-green strikethrough'
 
 [git_status]
 # format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-format = '$all_status$ahead_behind\]'
+format = '$all_status$ahead_behind\] '
 ahead = '[⬆](bold purple)'
 behind = '[⬇](bold purple)'
 staged = '[✚](green)'
