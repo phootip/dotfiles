@@ -1,0 +1,10 @@
+style:
+  tag:
+    color: blue
+  comment:
+    color: white
+  snippet:
+    color: green
+finder:
+  command: fzf
+  overrides: --layout=reverse --no-exact --preview-window="top:4"
