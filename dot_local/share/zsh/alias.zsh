@@ -42,7 +42,8 @@ alias r='ranger'
 ## Works
 # terraform
 alias tf='terraform'
-alias tfi='terraform init -backend-config=./backend.tfvars'
+alias tfi='terraform init'
+alias tfib='terraform init -backend-config'
 alias tfp='terraform plan -lock=false -out=changes.plan'
 alias tfa='terraform apply changes.plan'
 alias tfsl='terraform state list'
