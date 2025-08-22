@@ -7,4 +7,4 @@ style:
     color: green
 finder:
   command: fzf
-  overrides: --layout=reverse --no-exact --preview-window="top:4"
+  overrides: --layout=reverse --no-exact --preview-window="top:4" --algo=v2 +x
