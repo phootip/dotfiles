@@ -1,0 +1,25 @@
+% phootip, rbw, secrets
+
+# List secrets
+rbw list
+
+# List verbose
+rbw list --raw | jq '.[] | {folder,name,user}' | mlr --j2p --barred cat
+
+# List secrets in a folder
+rbw list --raw | jq '.[] | select(.folder == "<folder>") | {folder,name,user}' | mlr --j2p --barred cat
+
+# Get secrets
+rbw get <name>
+
+# Get secrets with fzf
+rbw list | fzf | xargs -I {} rbw get '{}'
+
+# Add secrets
+rbw add <name>
+
+# Add secrets with user
+rbw add <name> <user>
+
+# Add secrets with folder
+rbw add --folder <folder> <name>

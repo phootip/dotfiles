@@ -1,0 +1,10 @@
+% phootip, mlr, format
+
+# Format into table with HEADER
+| mlr --j2p --barred cat
+
+# Example: Format into table with HEADER
+echo '[{"id": 5, "name": "alpha", "status": "okay"}]' | jq '.[] | {id, name}' | mlr --j2p --barred cat
+
+# Format with regex, 2 or more space
+| mlr --p2j --ifs-regex=" ( )+" --barred cat

@@ -7,4 +7,8 @@ style:
     color: green
 finder:
   command: fzf
-  overrides: --layout=reverse --no-exact --preview-window="top:4" --algo=v2 +x
+  # overrides: --layout=reverse --no-exact --preview-window="top:4" --algo=v2 --no-extended --tiebreak=begin,chunk,length
+  overrides: --layout=reverse --no-exact --no-extended --preview-window="top:4" --tiebreak=begin
+  # overrides: --layout=reverse --no-exact --no-extended --preview-window="top:4" --tiebreak=length
+  # overrides: --layout=reverse --no-exact --preview-window="top:4" --algo=v2
+  overrides_var: --tiebreak=begin

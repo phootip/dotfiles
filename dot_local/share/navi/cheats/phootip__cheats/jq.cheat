@@ -1,0 +1,7 @@
+% phootip, jq, json
+
+# Print raw, for bash script
+jq -r
+
+# Format into table array
+| jq -r @tsv | column -ts $'\t'
