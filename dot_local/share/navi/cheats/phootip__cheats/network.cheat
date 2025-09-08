@@ -1,4 +1,7 @@
-% network, ipconfig, ifconfig
+% phootip, network, ipconfig, ifconfig
 
 # Get internal IP
 ifconfig -l | xargs -n1 ipconfig getifaddr
+
+# Get internal IP with interface
+ifconfig -l | xargs -n1 -I {} sh -c 'ip=$(ipconfig getifaddr {}); [ -n "$ip" ] && echo "{} $(ipconfig getifaddr {})"'
