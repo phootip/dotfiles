@@ -12,10 +12,11 @@ $time\
 $line_break\
 $python\
 $character\
+${custom.osc}\
 """
 
-# [hostname]
-# ssh_only = false
+follow_symlinks = false
+# add_newline = false
 
 [directory]
 style = "blue"
@@ -76,3 +77,8 @@ echo -n "[$env]"
 when = "test -f .terraform/terraform.tfstate"
 style = "bold purple"
 symbol = "󱁢"
+
+[custom.osc]
+command = '''printf "\033]133;A\007"'''
+format = '[$symbol($output)]($style)'
+when = true
