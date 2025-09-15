@@ -71,7 +71,8 @@ style = "bright-black"
 command = """
 config=$(jq '.backend.config' .terraform/terraform.tfstate)
 env=$(echo "$config" | grep -oE 'dev|qa|uat|prod' | head -n 1)
-echo -n "󱁢-[$env]"
+echo -n "[$env]"
 """
 when = "test -f .terraform/terraform.tfstate"
-style = "purple"
+style = "bold purple"
+symbol = "󱁢"
