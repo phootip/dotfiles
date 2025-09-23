@@ -7,6 +7,7 @@ alias cd='z'
 
 # nvim
 export EDITOR="nvim"
+export NVIM_APPNAME="lazyvim"
 alias loadnvm="source $NVM_DIR/nvm.sh"
 alias vim="nvim"
 # alias nvim="NVIM_APPNAME=lazyvim nvim"
