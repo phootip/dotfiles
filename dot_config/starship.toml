@@ -71,7 +71,7 @@ style = "bright-black"
 [custom.terraform]
 command = """
 config=$(jq '.backend.config' .terraform/terraform.tfstate)
-env=$(echo "$config" | grep -oE 'dev|qa|uat|prod' | head -n 1)
+env=$(echo "$config" | grep -oE 'dev|preview|qa|uat|prod' | head -n 1)
 echo -n "[$env]"
 """
 when = "test -f .terraform/terraform.tfstate"

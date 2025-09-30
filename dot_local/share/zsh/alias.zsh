@@ -11,7 +11,7 @@ export NVIM_APPNAME="lazyvim"
 alias loadnvm="source $NVM_DIR/nvm.sh"
 alias vim="nvim"
 # alias nvim="NVIM_APPNAME=lazyvim nvim"
-alias v="NVIM_APPNAME=lazyvim nvim -c 'SessionRestore'"
+alias v="NVIM_APPNAME=lazyvim nvim -c 'AutoSession restore'"
 alias vt="NVIM_APPNAME=lazyvim nvim -c 'hi Normal guifg=#dcd7ba guibg=#293036 | terminal'"
 alias tv="NVIM_APPNAME=testnvim nvim"
 export PATH=~/.local/bin:$PATH
