@@ -7,7 +7,10 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
-  # branchLogCmd: 'git log --color=always --decorate --oneline --graph --stat'
+  # branchLogCmd: "git log --color=always --decorate --oneline --graph --stat"
+  branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --stat {{branchName}} --
+  allBranchesLogCmds:
+    - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium
 os:
   # editPreset: 'nvim'
   edit: "NVIM_APPNAME=lazyvim nvim"
@@ -28,5 +31,5 @@ keybinding:
     moveUpCommit: "<c-u>"
     renameCommit: "g"
     renameCommitWithEditor: "R"
-    viewResetOptions: "r"
+    # viewResetOptions: "r"
     copyCommitAttributeToClipboard: "Y"
