@@ -5,6 +5,7 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
+$kubernetes\
 ${custom.terraform}\
 $cmd_duration\
 $fill\
@@ -42,7 +43,7 @@ style = 'bold bright-green strikethrough'
 
 [git_status]
 # format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-format = '$all_status$ahead_behind\] '
+format = '$all_status$ahead_behind\]'
 ahead = '[⬆](bold purple)'
 behind = '[⬇](bold purple)'
 staged = '[✚](green)'
@@ -61,7 +62,7 @@ format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
 [cmd_duration]
-format = "[$duration]($style) "
+format = " [$duration]($style) "
 style = "yellow"
 
 [python]
@@ -72,11 +73,17 @@ style = "bright-black"
 command = """
 config=$(jq '.backend.config' .terraform/terraform.tfstate)
 env=$(echo "$config" | grep -oE 'dev|preview|qa|uat|prod' | head -n 1)
-echo -n "[$env]"
+echo -n "$env"
 """
 when = "test -f .terraform/terraform.tfstate"
 style = "bold purple"
 symbol = "󱁢"
+format = '\[[$symbol($output)]($style)\]'
+
+[kubernetes]
+disabled = false
+# format = '\[[$symbol$context( \($namespace\))]($style)\]'
+format = '\[[$symbol(\($namespace\))]($style)\]'
 
 [custom.osc]
 command = '''printf "\033]133;A\007"'''
