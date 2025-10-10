@@ -28,7 +28,8 @@ ta() {
     if [ -n "$TMUX" ]; then
         echo "already in tmux"
     else
-        cd ~/phootip  && tmux new -As phootip
+        # cd ~/phootip  && tmux new -As phootip
+        cd ~/.local/share/chezmoi  && tmux new -As chezmoi
     fi
 }
 alias tk="tmux kill-server"
