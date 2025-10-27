@@ -1,0 +1,4 @@
+% kube, k8s
+
+# decode base64
+pbpaste | base64 -d

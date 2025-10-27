@@ -1,0 +1,8 @@
+% disk, du, df
+
+# disk use 1 level, and sort
+du -hd 1 | sort -rh
+
+# disk use 2 level, and sort
+du -hd 2 | sort -rh
+

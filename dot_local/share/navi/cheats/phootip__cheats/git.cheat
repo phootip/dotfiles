@@ -1,0 +1,5 @@
+% git
+
+# Print raw, for bash script
+jq -r
+

@@ -1,4 +1,4 @@
-% phootip, mlr, format
+% mlr, format
 
 # Format into table with HEADER
 | mlr --j2p --barred cat

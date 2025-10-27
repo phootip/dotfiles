@@ -1,4 +1,4 @@
-% phootip, network, ipconfig, ifconfig
+% network, ipconfig, ifconfig
 
 # Get internal IP
 ifconfig -l | xargs -n1 ipconfig getifaddr

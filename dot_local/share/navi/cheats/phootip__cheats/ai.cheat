@@ -1,0 +1,5 @@
+% ai, gemini
+
+# Print raw, for bash script
+gemini -m "gemini-2.5-flash"
+
