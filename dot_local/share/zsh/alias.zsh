@@ -72,6 +72,17 @@ alias azl='az account list --query "[?isDefault==\`true\`]" -o table'
 alias azs='az account set --subscription'
 # kube
 alias first_pod="kgpo | head -2 | tail -1 | cut -d ' ' -f1"
+kgpof() {
+  kgpol app=$1 | head -2 | tail -1 | cut -d ' ' -f1
+}
+kexf() {
+  POD=$(kgpof $1)
+  kex $POD -- sh
+}
+klof() {
+  POD=$(kgpof $1)
+  klo $POD
+}
 tmux_color() {
   for i in {0..255}; do
     printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n"

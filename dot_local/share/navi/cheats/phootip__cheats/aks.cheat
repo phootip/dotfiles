@@ -1,0 +1,4 @@
+% az, aks, kube
+
+# get aks name, resource group
+az aks list | jq '.[].name'
