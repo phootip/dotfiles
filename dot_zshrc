@@ -10,11 +10,14 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 
 source $HOME/.local/share/antidote/antidote.zsh
 
+export ATUIN_NOBIND="true"
 antidote load $ZDOT/zsh_plugins.txt
 source "$ZDOT/kubectl_aliases.zsh"
 source "$ZDOT/prompt.zsh"
-source "$ZDOT/pmzsh.sh"
 source "$ZDOT/zoxide.zsh"
 source "$ZDOT/alias.zsh"
 source "$ZDOT/local.zsh"
 source "$ZDOT/bindkey.zsh"
+unset ATUIN_NOBIND
+eval "$(atuin init zsh --disable-up-arrow)"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

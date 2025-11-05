@@ -1,0 +1,5 @@
+% helm, kube
+
+# helm diff
+helm diff upgrade <name> . --values ./values.dev.yaml
+

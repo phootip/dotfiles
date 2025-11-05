@@ -20,6 +20,15 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --one-shot $GITHUB_USERNAME
 ```
 
 ## To update email
+
 ```bash
 chezmoi init --prompt
+```
+
+## Remote Atuin
+
+```bash
+# install
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+atuin login
 ```

@@ -11,6 +11,7 @@ export NVIM_APPNAME="lazyvim"
 alias loadnvm="source $NVM_DIR/nvm.sh"
 # alias nvim="NVIM_APPNAME=lazyvim nvim"
 alias v="NVIM_APPNAME=lazyvim nvim -c 'lua require(\"persistence\").load()'"
+alias vr="NVIM_APPNAME=lazyvim nvim"
 alias vt="NVIM_APPNAME=lazyvim nvim -c 'hi Normal guifg=#dcd7ba guibg=#293036 | terminal'"
 alias tv="NVIM_APPNAME=testnvim nvim"
 export PATH=~/.local/bin:$PATH
