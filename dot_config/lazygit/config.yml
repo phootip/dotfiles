@@ -33,3 +33,5 @@ keybinding:
     # renameCommitWithEditor: "R"
     # viewResetOptions: "r"
     copyCommitAttributeToClipboard: "Y"
+  branches:
+    checkoutPreviousBranch: ""

@@ -1,0 +1,20 @@
+{
+  "general": {
+    "preferredEditor": "neovim"
+  },
+  "security": {
+    "auth": {
+      "selectedType": "gemini-api-key"
+    }
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
+    }
+  },
+  "mcpServers": {
+    "gitcmp": {
+      "url": "https://gitmcp.io/docs"
+    }
+  }
+}
