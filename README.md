@@ -32,3 +32,13 @@ chezmoi init --prompt
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 atuin login
 ```
+
+## MACOS TODO
+
+Need to automate these
+
+- [ ] disable auto rearrange spaces
+- [ ] increase trackpad tracking speed
+- [ ] install alt-tab, maccy, flameshot, Unnaturalscroll wheel
+- [ ] remap caps lock
+- [ ] remap language switch to alt+space

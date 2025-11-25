@@ -82,8 +82,8 @@ format = '\[[$symbol($output)]($style)\]'
 
 [kubernetes]
 disabled = false
-# format = '\[[$symbol$context( \($namespace\))]($style)\]'
-format = '\[[$symbol(\($namespace\))]($style)\]'
+format = '\[[$symbol$context( \($namespace\))]($style)\]'
+# format = '\[[$symbol(\($namespace\))]($style)\]'
 
 [custom.osc]
 command = '''printf "\033]133;A\007"'''

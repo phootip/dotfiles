@@ -2,6 +2,26 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
 
+wezterm.on("increase-opacity", function(window, pane)
+	local overrides = window:get_config_overrides() or {}
+	if not overrides.window_background_opacity then
+		overrides.window_background_opacity = 0.85
+	elseif overrides.window_background_opacity <= 1 then
+		overrides.window_background_opacity = overrides.window_background_opacity + 0.05
+	end
+	window:set_config_overrides(overrides)
+end)
+
+wezterm.on("decrease-opacity", function(window, pane)
+	local overrides = window:get_config_overrides() or {}
+	if not overrides.window_background_opacity then
+		overrides.window_background_opacity = 0.85
+	elseif overrides.window_background_opacity >= 0 then
+		overrides.window_background_opacity = overrides.window_background_opacity - 0.05
+	end
+	window:set_config_overrides(overrides)
+end)
+
 -- config.color_scheme = "Gruvbox Dark (Gogh)"
 config.color_scheme = "Catppuccin Mocha"
 -- config.color_scheme = "Dracula (Official)"
@@ -50,7 +70,11 @@ config.keys = {
 	{ key = "Delete", mods = "ALT", action = act.SendKey({ key = "d", mods = "ALT" }) },
 	{ key = "v", mods = "SUPER", action = act.PasteFrom("Clipboard") },
 	-- { key = "z", mods = "SUPER", action = act.SendKey({ key = "y", mods = "CTRL" }) },
-	-- { key = "z", mods = "CTRL", action = act.SendKey({ key = "y", mods = "CTRL" }) },
+	{ key = "z", mods = "CTRL", action = act.SendKey({ key = "y", mods = "CTRL" }) },
+	{ key = ",", mods = "CTRL", action = act.EmitEvent("decrease-opacity") },
+	{ key = ".", mods = "CTRL", action = act.EmitEvent("increase-opacity") },
+	{ key = "9", mods = "CTRL", action = act.EmitEvent("decrease-opacity") },
+	{ key = "0", mods = "CTRL", action = act.EmitEvent("increase-opacity") },
 }
 
 return config
