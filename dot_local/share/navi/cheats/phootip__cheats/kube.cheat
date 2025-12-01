@@ -2,3 +2,6 @@
 
 # decode base64
 pbpaste | base64 -d
+
+# Debugging Pods with network tools
+kubectl run -it --rm --restart=Never debug-pod --image=nicolaka/netshoot -- /bin/bash

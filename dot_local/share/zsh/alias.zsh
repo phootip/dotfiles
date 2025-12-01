@@ -43,30 +43,31 @@ alias r='ranger'
 
 ## Works
 # terraform
-alias tf='terraform'
-alias tfi='terraform init'
-alias tfib='terraform init -backend-config'
-alias tfp='terraform plan -lock=false -out=changes.plan'
+# alias tf='terraform'
+alias tf='tofu'
+alias tfi='tf init'
+alias tfib='tf init -backend-config'
+alias tfp='tf plan -lock=false -out=changes.tfplan'
 tfpe() {
-  terraform plan -lock=false -out=changes.plan -var-file variables.$1.tfvars
+  tf plan -lock=false -out=changes.tfplan -var-file variables.$1.tfvars
 }
 tfie() {
-  terraform init -backend-config=azure.$1.tfbackend
+  tf init -backend-config=azure.$1.tfbackend
 } 
-alias tfa='terraform apply changes.plan'
-alias tfsl='terraform state list'
-alias tfss='terraform state show'
+alias tfa='tf apply changes.tfplan'
+alias tfsl='tf state list'
+alias tfss='tf state show'
 # terragrunt
 alias tg='terragrunt'
 alias tgi='terragrunt init'
-alias tgp='terragrunt plan -lock=false -out=changes.plan'
+alias tgp='terragrunt plan -lock=false -out=changes.tfplan'
 alias tgs='terragrunt state'
 alias tgss='terragrunt state show'
 alias tgsl='terragrunt state list'
-alias tga='terragrunt apply changes.plan'
-alias tgpa='terragrunt run-all plan -lock=false -out=changes.plan'
-alias tgap='terragrunt run-all plan -lock=false -out=changes.plan'
-alias tgaa='terragrunt run-all apply changes.plan'
+alias tga='terragrunt apply changes.tfplan'
+alias tgpa='terragrunt run-all plan -lock=false -out=changes.tfplan'
+alias tgap='terragrunt run-all plan -lock=false -out=changes.tfplan'
+alias tgaa='terragrunt run-all apply changes.tfplan'
 # azure
 alias azl='az account show -o table'
 alias azl='az account list --query "[?isDefault==\`true\`]" -o table'
