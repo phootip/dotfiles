@@ -38,8 +38,9 @@ alias mux="tmuxinator"
 
 # ranger
 # export LC_ALL=C
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias r='ranger'
+# https://github.com/microsoft/WSL/issues/1620
+function ranger () { command ranger "$@"; echo -e "\e[?25h"; }
+alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 ## Works
 # terraform
