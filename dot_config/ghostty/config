@@ -1,0 +1,46 @@
+# keybind = clear
+# Theme
+theme = catppuccin-mocha
+
+# macOS specific
+macos-option-as-alt = true
+
+# Font
+font-family = JetBrainsMonoNL Nerd Font Mono
+font-size = 15
+
+# Cursor
+macos-titlebar-style = hidden
+custom-shader = shaders/cursor_warp.glsl
+cursor-color = d466d8
+# cursor-color = 00ff00
+cursor-style = block
+shell-integration-features = no-cursor
+cursor-style-blink = true
+# window-decoration = none
+
+# Window
+background-opacity = 0.85
+# background-opacity = 1
+# gtk-tabs-location = hidden
+
+# Key bindings
+keybind = super+shift+right_bracket=text:\x1bo
+keybind = super+shift+left_bracket=text:\x1by
+keybind = ctrl+tab=text:\x1bo
+keybind = ctrl+shift+tab=text:\x1by
+
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+equal=increase_font_size:1
+keybind = super+minus=decrease_font_size:1
+keybind = super+equal=increase_font_size:1
+keybind = super+left=text:\x01
+keybind = super+right=text:\x05
+keybind = super+backspace=text:\x15
+keybind = super+delete=text:\x1bd
+keybind = alt+delete=text:\x1bd
+keybind = alt+left=text:\x1bb
+keybind = alt+right=text:\x1bf
+keybind = super+v=paste_from_clipboard
+keybind = ctrl+z=text:\x19
+keybind = super+t=toggle_window_decorations
