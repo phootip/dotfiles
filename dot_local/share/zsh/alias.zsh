@@ -44,16 +44,23 @@ alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd
 
 ## Works
 # terraform
-# alias tf='terraform'
-alias tf='tofu'
+alias tf='terraform'
+# alias tf='tofu'
 alias tfi='tf init'
 alias tfib='tf init -backend-config'
 alias tfp='tf plan -lock=false -out=changes.tfplan'
 tfpe() {
-  tf plan -lock=false -out=changes.tfplan -var-file variables.$1.tfvars
+  tf plan -lock=false -out=changes.tfplan -var-file terraform.$1.tfvars
 }
+# tfie() {
+#   tf init -backend-config=azure.$1.tfbackend
+# } 
 tfie() {
-  tf init -backend-config=azure.$1.tfbackend
+  tf init -backend-config=backend.$1.config
+} 
+
+tfire() {
+  tf init -reconfigure -backend-config=backend.$1.config
 } 
 alias tfa='tf apply changes.tfplan'
 alias tfsl='tf state list'
