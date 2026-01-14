@@ -50,19 +50,26 @@ alias tfi='tf init'
 alias tfib='tf init -backend-config'
 alias tfp='tf plan -lock=false -out=changes.tfplan'
 tfpe() {
-  tf plan -lock=false -out=changes.tfplan -var-file terraform.$1.tfvars
+  local env=$1
+  shift
+  tf plan -lock=false -out=changes.tfplan -var-file terraform.$env.tfvars "$@"
 }
 # tfie() {
 #   tf init -backend-config=azure.$1.tfbackend
 # } 
 tfie() {
-  tf init -backend-config=backend.$1.config
+  local env=$1
+  shift
+  tf init -backend-config=backend.$env.config "$@"
 } 
 
 tfire() {
-  tf init -reconfigure -backend-config=backend.$1.config
+  local env=$1
+  shift
+  tf init -reconfigure -backend-config=backend.$env.config "$@"
 } 
 alias tfa='tf apply changes.tfplan'
+alias tfs='tf state'
 alias tfsl='tf state list'
 alias tfss='tf state show'
 # terragrunt
