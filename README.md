@@ -25,6 +25,12 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --one-shot $GITHUB_USERNAME
 chezmoi init --prompt
 ```
 
+## Nvim
+
+```bash
+git clone https://github.com/phootip/lazyvim ~/.config/lazyvim
+```
+
 ## Remote Atuin
 
 ```bash

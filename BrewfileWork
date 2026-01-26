@@ -1,0 +1,4 @@
+brew "terraform"
+brew "azure-cli"
+brew "kubectx"
+
