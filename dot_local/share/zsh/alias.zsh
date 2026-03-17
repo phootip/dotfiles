@@ -68,6 +68,17 @@ tfire() {
   shift
   tf init -reconfigure -backend-config=backend.$env.config "$@"
 } 
+
+tfime() {
+  local env=$1
+  shift
+  tf import -var-file terraform.$env.tfvars "$@"
+} 
+
+
+
+yf() { eval "$@" | fzf | awk '{print $1}' | tr -d '\n' | pbcopy }
+
 alias tfa='tf apply changes.tfplan'
 alias tfs='tf state'
 alias tfsl='tf state list'

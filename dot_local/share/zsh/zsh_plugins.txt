@@ -4,6 +4,7 @@ ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages
 ohmyzsh/ohmyzsh path:plugins/starship
 # sindresorhus/pure
+# bonnefoa/kubectl-fzf path:shell/
 
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
