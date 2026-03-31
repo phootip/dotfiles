@@ -77,7 +77,10 @@ tfime() {
 
 
 
-yf() { eval "$@" | fzf | awk '{print $1}' | tr -d '\n' | pbcopy }
+yf() {
+  local result=$(eval "$@" | fzf | awk '{print $1}' | tr -d '\n')
+  echo -n "$result" | if [[ "$OSTYPE" == "darwin"* ]]; then pbcopy; else xclip -selection clipboard; fi
+}
 
 alias tfa='tf apply changes.tfplan'
 alias tfs='tf state'
