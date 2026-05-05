@@ -23,8 +23,11 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 
 # echo "Set a shorter Delay until key repeat"
 # defaults write NSGlobalDomain InitialKeyRepeat -int 15
+#
+# echo "Disable rearrange workspace based on most recent use"
 
 echo "Show active apps only in Dock"
-defaults write com.apple.dock static-only -bool true; killall Dock
+defaults write com.apple.dock static-only -bool true
+killall Dock
 
 {{ end -}}

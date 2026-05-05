@@ -4,13 +4,13 @@ theme = catppuccin-mocha
 
 # macOS specific
 macos-option-as-alt = true
+macos-titlebar-style = hidden
 
 # Font
 font-family = JetBrainsMonoNL Nerd Font Mono
 font-size = 15
 
 # Cursor
-macos-titlebar-style = hidden
 custom-shader = shaders/cursor_warp.glsl
 cursor-color = d466d8
 # cursor-color = 00ff00

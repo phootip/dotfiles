@@ -1,19 +1,28 @@
 gui:
   showFileTree: false
+  branchColorPatterns:
+    "develop": "#11aaff"
+  # authorColors:
+  #   "Your Name": "green"
+  #   "Collaborator Name": "#ff0000" # Hex codes work too!
+  #   "*": "white" # Default for everyone else
 git:
   log:
     showGraph: "always"
-    showWholeGraph: true
+    showWholeGraph: false
   # paging:
   #   colorArg: always
   #   pager: delta --dark --paging=never
-  # branchLogCmd: "git log --color=always --decorate --oneline --graph --stat"
   # mainBranches:
   #   - main
   # - develop
-  # branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --stat {{branchName}} --
-  # allBranchesLogCmds:
-  #   - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium
+  # branchLogCmd: "git log --color=always --decorate --oneline --graph --stat {{branchName}} --"
+  # branchLogCmd: "git log --color=always --decorate --oneline --graph {{branchName}} --"
+  branchLogCmd: "git log --all --color=always --decorate --pretty=medium --oneline --graph {{branchName}} --"
+  # branchLogCmd: "git log --all --color=always --decorate --oneline --graph --date=relative --pretty=format:'%C(yellow)%h %C(auto)%d %C(cyan)%an%C(reset): %s' {{branchName}} --"
+  allBranchesLogCmds:
+    - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium
+    # - "git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=format:'%C(yellow)%h %C(auto)%d %C(cyan)%an%C(reset): %s'"
 os:
   # editPreset: 'nvim'
   edit: "NVIM_APPNAME=lazyvim nvim"
