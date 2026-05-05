@@ -38,6 +38,7 @@ keybind = super+left=text:\x01
 keybind = super+right=text:\x05
 keybind = super+backspace=text:\x15
 keybind = super+delete=text:\x1bd
+keybind = super+u=toggle_background_opacity
 keybind = alt+delete=text:\x1bd
 keybind = alt+left=text:\x1bb
 keybind = alt+right=text:\x1bf
