@@ -103,6 +103,8 @@ alias azl='az account list --query "[?isDefault==\`true\`]" -o table'
 alias azs='az account set --subscription'
 # kube
 alias first_pod="kgpo | head -2 | tail -1 | cut -d ' ' -f1"
+alias kn="kubens"
+alias kc="kubectx"
 kgpof() {
   kgpol app=$1 | head -2 | tail -1 | cut -d ' ' -f1
 }
