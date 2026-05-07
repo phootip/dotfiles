@@ -75,20 +75,42 @@ format = "[$virtualenv]($style) "
 style = "bright-black"
 
 [custom.terraform]
-command = """
-config=$(jq '.backend.config' .terraform/terraform.tfstate)
-env=$(echo "$config" | grep -oE 'dev|preview|qa|uat1|uat2|uat3|uat|sit1|sit2|sit3|sit|np|prod' | head -n 1)
-echo -n "$env"
-"""
+command = '''
+env=$(jq -r '.backend.config' .terraform/terraform.tfstate | grep -oE 'dev|preview|qa|uat[0-9]?|sit[0-9]?|np|prod' | head -n 1)
+case "$env" in
+  dev) c="1;32" ;;
+  sit*) c="1;36" ;;
+  uat*) c="1;33" ;;
+  prod) c="1;31" ;;
+  *) c="1;35" ;;
+esac
+printf '[\033[1;35m󱁢 \033[0m\033[%sm%s\033[0m]' "$c" "$env"
+'''
 when = "test -f .terraform/terraform.tfstate"
-style = "bold purple"
-symbol = "󱁢"
-format = '\[[$symbol($output)]($style)\]'
+unsafe_no_escape = true
+format = '$output'
 
 [kubernetes]
 disabled = false
-format = '\[[$symbol$context( \($namespace\))]($style)\]'
-# format = '\[[$symbol(\($namespace\))]($style)\]'
+symbol = "󱃾 "
+format = '\[[$symbol](bold blue)[$context( \($namespace\))]($style)\]'
+style = "bold purple"
+
+[[kubernetes.contexts]]
+context_pattern = ".*prod.*"
+style = "bold red"
+#
+[[kubernetes.contexts]]
+context_pattern = ".*uat[0-9]?.*"
+style = "bold yellow"
+#
+[[kubernetes.contexts]]
+context_pattern = ".*sit[0-9]?.*"
+style = "bold bright-cyan"
+#
+[[kubernetes.contexts]]
+context_pattern = ".*dev.*"
+style = "bold green"
 
 [custom.osc]
 command = '''printf "\033]133;A\007"'''

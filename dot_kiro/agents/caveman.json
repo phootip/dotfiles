@@ -1,0 +1,22 @@
+{
+  "name": "c",
+  "description": "caveman",
+  "prompt": null,
+  "mcpServers": {},
+  "tools": [
+    "*"
+  ],
+  "toolAliases": {},
+  "allowedTools": [
+    "read"
+  ],
+  "resources": [
+    "skill://.kiro/skills/**/SKILL.md",
+    "skill://~/.kiro/skills/**/SKILL.md",
+    "skill://.phootip/**/*.md"
+  ],
+  "hooks": {},
+  "toolsSettings": {},
+  "includeMcpJson": true,
+  "model": null
+}
