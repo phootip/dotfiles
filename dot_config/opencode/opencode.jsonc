@@ -9,6 +9,28 @@
     "@zhafron/opencode-kiro-auth"
   ],
   "provider": {
+    "openrouter": {
+      "models": {
+        "google/gemma-3-27b-it:free": {
+          "name": "Gemma 3 27B (free)"
+        },
+        "meta-llama/llama-3.3-70b-instruct:free": {
+          "name": "Llama 3.3 70B (free)"
+        },
+        "deepseek/deepseek-r1:free": {
+          "name": "DeepSeek R1 (free)"
+        },
+        "deepseek/deepseek-chat-v3-0324:free": {
+          "name": "DeepSeek V3 (free)"
+        },
+        "qwen/qwen3-235b-a22b:free": {
+          "name": "Qwen3 235B (free)"
+        },
+        "moonshotai/kimi-k2:free": {
+          "name": "Kimi K2 (free)"
+        }
+      }
+    },
     "kiro": {
       "models": {
         "claude-sonnet-4-5": {
