@@ -1,0 +1,11 @@
+default_session = { startup_command = "v" }
+
+[[session]]
+name = "foobar"
+path = "~/phootip/works/bankx/repos"
+startup_command = "lazygit"
+
+[[session]]
+name = "cluster"
+path = "~/phootip/works/bankx/repos"
+startup_command = "nvim --cmd \"let g:project='cluster'\""

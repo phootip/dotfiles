@@ -23,3 +23,6 @@ brew "gemini-cli"
 brew "yq"
 brew "kubectx"
 brew "atuin"
+# image
+brew "imagemagick"
+brew "pngpaste"

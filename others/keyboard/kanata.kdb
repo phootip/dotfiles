@@ -1,0 +1,16 @@
+(defcfg
+  process-unmapped-keys yes
+  concurrent-tap-hold yes
+)
+
+(defsrc
+  w e r
+)
+
+(deflayer base
+  w e r
+)
+
+(defchordsv2
+  (w e r) (macro C-left) 35 all-released ()
+)

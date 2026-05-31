@@ -4,6 +4,8 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 alias f='cd $(find -maxdepth 4 -type d | fzf)'
 alias cd='z'
+alias pwr='echo "${PWD/#$HOME/~}"'
+lsr() { for f in "${1:-.}"/*(N); do echo "${${f:A}/#$HOME/~}"; done }
 
 # nvim
 export EDITOR="nvim"
