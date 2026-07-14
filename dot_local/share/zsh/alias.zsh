@@ -118,6 +118,65 @@ klof() {
   POD=$(kgpof $1)
   klo $POD
 }
+unalias kd 2>/dev/null
+kd() {
+  # Pass-through: if second arg looks like a resource name (not a flag), describe directly
+  if [[ $# -ge 2 && "$2" != -* ]]; then
+    kubectl describe "$@"
+    return
+  fi
+
+  local resource_type="${1:-pod}"
+
+  local selection
+  selection=$(kubectl get "$resource_type" --no-headers 2>/dev/null | fzf --header="Select $resource_type") || return
+
+  local name=$(awk '{print $1}' <<< "$selection")
+  kubectl describe "$resource_type" "$name"
+}
+unalias klo 2>/dev/null
+klo() {
+  if [[ $# -gt 0 && "$1" != -* ]]; then
+    kubectl logs -f "$@"
+    return
+  fi
+
+  local selection
+  selection=$(kubectl get pods --no-headers \
+    -o custom-columns="NAME:.metadata.name,READY:.status.containerStatuses[*].ready,STATUS:.status.phase" \
+    2>/dev/null | fzf --header="Select pod") || return
+
+  local pod=$(awk '{print $1}' <<< "$selection")
+  local containers=($(kubectl get pod "$pod" \
+    -o jsonpath='{.spec.containers[*].name}' 2>/dev/null))
+
+  if [[ ${#containers[@]} -gt 1 ]]; then
+    local container
+    container=$(printf '%s\n' "${containers[@]}" | fzf --header="Select container") || return
+    kubectl logs -f "$pod" -c "$container" "$@"
+  else
+    kubectl logs -f "$pod" "$@"
+  fi
+}
+kloall() {
+  local selection
+  selection=$(kubectl get pods --all-namespaces --no-headers \
+    -o custom-columns="NS:.metadata.namespace,NAME:.metadata.name,READY:.status.containerStatuses[*].ready,STATUS:.status.phase" \
+    2>/dev/null | fzf --header="Select pod (all namespaces)") || return
+
+  local ns=$(awk '{print $1}' <<< "$selection")
+  local pod=$(awk '{print $2}' <<< "$selection")
+  local containers=($(kubectl get pod "$pod" -n "$ns" \
+    -o jsonpath='{.spec.containers[*].name}' 2>/dev/null))
+
+  if [[ ${#containers[@]} -gt 1 ]]; then
+    local container
+    container=$(printf '%s\n' "${containers[@]}" | fzf --header="Select container") || return
+    kubectl logs -f -n "$ns" "$pod" -c "$container"
+  else
+    kubectl logs -f -n "$ns" "$pod"
+  fi
+}
 tmux_color() {
   for i in {0..255}; do
     printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n"
