@@ -2,8 +2,8 @@ gui:
   showFileTree: false
   branchColorPatterns:
     "develop": "#11aaff"
-    "main": "#de1653"
-    "master": "#de1653"
+    "^main$": "#de1653"
+    "^master$": "#de1653"
   # authorColors:
   #   "Your Name": "green"
   #   "Collaborator Name": "#ff0000" # Hex codes work too!
