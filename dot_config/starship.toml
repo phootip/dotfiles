@@ -76,11 +76,13 @@ style = "bright-black"
 
 [custom.terraform]
 command = '''
-env=$(jq -r '.backend.config' .terraform/terraform.tfstate | grep -oE 'dev|preview|qa|uat[0-9]?|sit[0-9]?|np|prod' | head -n 1)
+env=$(jq -r '.backend.config' .terraform/terraform.tfstate | grep -oE 'dev|preview|qa|uat[0-9]?|sit[0-9]?|np|nonprod|non-prod|prod' | head -n 1)
 case "$env" in
   dev) c="1;32" ;;
   sit*) c="1;36" ;;
   uat*) c="1;33" ;;
+  np*) c="38;5;208" ;;
+  non*prod) c="38;5;208" ;;
   prod) c="1;31" ;;
   *) c="1;35" ;;
 esac

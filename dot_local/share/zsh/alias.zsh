@@ -185,5 +185,8 @@ tmux_color() {
 # https://unix.stackexchange.com/questions/236094/how-to-remove-the-last-command-or-current-command-for-bonus-from-zsh-history
 #
 
+# vpn
+alias tvpn="$HOME/.local/share/zsh/toggle-vpn.sh"
+
 alias bwa='rbw add --folder 7peaks'
 alias bwl=$'rbw list --raw | jq \'.[] | select(.folder == "7peaks") | {folder,name,user}\' | mlr --j2p --barred cat'
