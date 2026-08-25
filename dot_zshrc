@@ -23,3 +23,7 @@ source "$ZDOT/ai.zsh"
 unset ATUIN_NOBIND
 eval "$(atuin init zsh --disable-up-arrow)"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/phootip.t.extbankx.live/.local/bin:$PATH"
