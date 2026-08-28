@@ -1,5 +1,4 @@
 {
-  "model": "opus[1m]",
   "hooks": {
     "SessionStart": [
       {
@@ -9,6 +8,14 @@
             "command": "node \"$CLAUDE_CONFIG_DIR/hooks/caveman-activate.js\"",
             "timeout": 5,
             "statusMessage": "Loading caveman mode..."
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/phootip.t.extbankx.live/.config/claude/hooks/context-mode-cache-heal.mjs\""
           }
         ]
       }
@@ -33,7 +40,9 @@
   "enabledPlugins": {
     "caveman@caveman": true,
     "pyright-lsp@claude-plugins-official": true,
-    "lua-lsp@claude-plugins-official": true
+    "lua-lsp@claude-plugins-official": true,
+    "context-mode@context-mode": true,
+    "gcx@gcx-marketplace": true
   },
   "extraKnownMarketplaces": {
     "caveman": {
@@ -41,8 +50,21 @@
         "source": "github",
         "repo": "JuliusBrussee/caveman"
       }
+    },
+    "context-mode": {
+      "source": {
+        "source": "github",
+        "repo": "mksglu/context-mode"
+      }
+    },
+    "gcx-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "grafana/gcx"
+      }
     }
   },
   "effortLevel": "medium",
-  "theme": "dark"
+  "theme": "dark",
+  "skipWorkflowUsageWarning": true
 }

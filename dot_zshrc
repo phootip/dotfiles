@@ -20,6 +20,7 @@ source "$ZDOT/local.zsh"
 source "$ZDOT/bindkey.zsh"
 source "$ZDOT/tools.zsh"
 source "$ZDOT/ai.zsh"
+source "$ZDOT/vpn.zsh"
 unset ATUIN_NOBIND
 eval "$(atuin init zsh --disable-up-arrow)"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
