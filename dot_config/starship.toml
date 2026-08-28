@@ -99,6 +99,10 @@ format = '\[[$symbol](bold blue)[$context( \($namespace\))]($style)\]'
 style = "bold purple"
 
 [[kubernetes.contexts]]
+context_pattern = ".*preprd.*"
+style = "bold #f78d02"
+
+[[kubernetes.contexts]]
 context_pattern = ".*prod.*"
 style = "bold red"
 #
