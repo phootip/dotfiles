@@ -1,3 +1,27 @@
 cask "alt-tab"
 cask "hiddenbar"
 brew "meetingbar"
+
+# Terminal-based AI coding assistant
+cask "claude-code"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# Keyboard customiser
+cask "karabiner-elements"
+# Password manager app
+cask "keepassxc"
+# Collaboration platform for API development
+cask "postman"
+# Open-source code editor
+cask "visual-studio-code"
+vscode "cweijan.dbclient-jdbc"
+vscode "cweijan.vscode-postgresql-client2"
+vscode "ms-ossdata.vscode-pgsql"
+go "cmd/go"
+go "cmd/gofmt"
+go "github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen"
+npm "@github/copilot"
+npm "@google/gemini-cli"
+npm "@usebruno/cli"
+npm "hrvst-cli"
+npm "openclaw"

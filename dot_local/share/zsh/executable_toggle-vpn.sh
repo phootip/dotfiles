@@ -4,18 +4,12 @@
 set -uo pipefail
 
 VPN_CONNECTIONS=(
-  "az-vwan-bkx-pltfm-hub-np_az-hub-bkx-pltfm-hub-np"
-  "az-vwan-bkx-pltfm-hub-np_az-vhub-bkx-connectivity-"
-  "az-vwan-bkx-pltfm-hub-pre_az-hub-bkx-pltfm-hub-pre"
-  "SCBX-Prod-AzureVPN"
-  "dev-old"
+  "dc-np"
+  "dc-pre"
 )
 VPN_ALIASES=(
   "dc-np"
-  "dr-np"
   "dc-pre"
-  "cmp"
-  "dev-old"
 )
 
 LOG_FILE="${LOG_FILE:-$HOME/toggle-vpn.log}"
